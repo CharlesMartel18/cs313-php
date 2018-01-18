@@ -8,9 +8,7 @@
       echo '<h1>SiteMap<h1>';
 
       function head($current){
-        echo '<nav>
-          <ul>
-            <li><a href="home.php"';
+        echo '<nav><ul><li><a href="home.php"';
         if($current == "home") {
                 echo 'class="active"';
         }
