@@ -12,7 +12,7 @@
         if($current == "home") {
                 echo 'class="active"';
         }
-        echo '>Home</a></li><li><a href="about.php"'; 
+        echo '>Home</a></li><li><a href="about-us.php"'; 
         if($current == "about") {
             echo 'class="active"';
         }
