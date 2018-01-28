@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    for ($i = 0; $i < count($_POST); $i++) {
-        $_POST[$i] = htmlspecialchars($_POST[$i]);
+    foreach ($_POST as $post) {
+        $_POST[$post] = htmlspecialchars($_POST[$post]);
     }
     $_SESSION["cartItems"] = $_POST["cartItems"];
     $_SESSION["total"] = $_POST["total"];
@@ -26,13 +26,20 @@ for more shopping and a link to continue to the checkout page.      # x
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>View Cart</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+        <link rel="stylesheet" type="text/css" media="screen" href="week03.css" />
         <!--<script src="main.js"></script>-->
     </head>
     <body>
-        <h2>Payment Information</h2>
+        <h2>Cart Items</h2>
         <form action='checkout.php' method="post">
-            
+            <?php
+                $items = $_SESSION["cartItems"];
+                $total = $_SESSION["total"];
+                foreach ($items as $item) {
+                    echo "$item <br />";
+                }
+                echo "<br /><p>Total: " . $total . "</p>";
+            ?>
             <input type="submit" value="Continue to Checkout">
         </form>
         <form action='browse-items.php' method="post">

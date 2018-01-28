@@ -15,7 +15,7 @@ Your browse page should also contain a link to view the cart.    # x
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Browse Items</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+    <link rel="stylesheet" type="text/css" media="screen" href="week03.css" />
     <!--<script src="main.js"></script>-->
 </head>
 <body>
@@ -91,12 +91,18 @@ Your browse page should also contain a link to view the cart.    # x
                         <input type="button" value="Add to Cart" onclick="addToCart('ab4')"/>
                     </li>
                 </ul>
+                <p id="a"></p>
             </div>
         </section>
         <input type="submit" value="View Cart" onclick="completeCart()">
     </form>
     <script>
         document.getElementById('cartItems').value = "[";
+
+        function a(item) {
+            document.getElementById('a').innerHTML = document.getElementById('cartItems').value;
+            document.getElementById('a').innerHTML += document.getElementById('total').value;
+        }
 
         function addToCart(id) {
             var item = document.getElementsById(id);
@@ -107,6 +113,8 @@ Your browse page should also contain a link to view the cart.    # x
                 document.getElementById('total').value += (item.value * numId.value);
                 document.getElementById('cartItems').value += ("["+String(item.innerHTML)+"], ");
             }
+
+            a(item);
         }
 
         function completeCart() {
