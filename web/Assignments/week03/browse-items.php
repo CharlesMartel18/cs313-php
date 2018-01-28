@@ -35,7 +35,6 @@ Your browse page should also contain a link to view the cart.    # x
                         <input type="number" value="0" id="num-c1" name="num-c1"/>
                         <input type="button" value="Add to Cart" onclick="addToCart('c1')"/>
                     </li>
-
                     <li id='c2' value="15.00">
                         Schmooze Incoming - Sequence
                         <span>$15.00</span>
@@ -49,7 +48,8 @@ Your browse page should also contain a link to view the cart.    # x
                         The Boy and the Star
                         <span>$40.00</span>
                         <input type="number" value="0" id="num-p1" name="num-p1"/>
-                        <input type="button" value="Add to Cart" onclick="addToCart('p1')"/>                        </li>
+                        <input type="button" value="Add to Cart" onclick="addToCart('p1')"/>                        
+                    </li>
                     <li id='p2' value="45.00">
                         Friends at Last
                         <span>$45.00</span>
