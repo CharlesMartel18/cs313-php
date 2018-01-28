@@ -23,6 +23,7 @@ Your browse page should also contain a link to view the cart.    # x
         <section class="productGroup" aria-label="Products">
             <input type="hidden" id="cartItems" name="cartItems"/>
             <input type="hidden" id="total" name="total"/>
+            <h1>Items</h1>
             <div id="art">
                 <h2>Art</h2>
                 <p>Contemplate on the emotion and life lessons conveyed through our
@@ -91,34 +92,29 @@ Your browse page should also contain a link to view the cart.    # x
                         <input type="button" value="Add to Cart" onclick="addToCart('ab4')"/>
                     </li>
                 </ul>
-                <p id="a"></p>
+                <p id="apple"></p>
             </div>
         </section>
-        <input type="submit" value="View Cart" onclick="completeCart()">
+        <input type="submit" value="View Cart"/>
     </form>
     <script>
-        document.getElementById('cartItems').value = "[";
-
-        function a(item) {
-            document.getElementById('a').innerHTML = document.getElementById('cartItems').value;
-            document.getElementById('a').innerHTML += document.getElementById('total').value;
-        }
+        var total = 0;
+        var items = [];
+        document.getElementById('cartItems').value = items;
 
         function addToCart(id) {
             var item = document.getElementsById(id);
 
-            var num = "num-" + String(id);
-            var numId = document.getElementById(num);
-            if (numID.value != 0) {
-                document.getElementById('total').value += (item.value * numId.value);
-                document.getElementById('cartItems').value += ("["+String(item.innerHTML)+"], ");
+            var numId = "num-" + id;
+            var numElement = document.getElementById(numId);
+            if (numElement.value > 0) {
+                total += (item.value * numElement.value);
+                document.getElementById('total').value = total;
+                items[items.length] = [item.innerHTML];
+                document.getElementById('cartItems').value = items;
             }
 
-            a(item);
-        }
-
-        function completeCart() {
-            document.getElementById('cartItems').value += "]";
+            document.getElementById('apple').innerHTML += total;
         }
     </script>
 </body>
