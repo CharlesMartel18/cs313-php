@@ -92,7 +92,6 @@ Your browse page should also contain a link to view the cart.    # x
                         <input type="button" value="Add to Cart" onclick="addToCart('ab4')"/>
                     </li>
                 </ul>
-                <p id="apple"></p>
             </div>
         </section>
         <input type="submit" value="View Cart"/>
@@ -113,8 +112,6 @@ Your browse page should also contain a link to view the cart.    # x
                 items[items.length] = [item.innerHTML];
                 document.getElementById('cartItems').value = items;
             }
-
-            document.getElementById('apple').innerHTML += total;
         }
     </script>
 </body>
