@@ -31,3 +31,6 @@ nav li a:hover {
   background-color: #4cb7f1c1;
   color: #ffffff;
 }
+form {
+  padding: 7px;
+}
